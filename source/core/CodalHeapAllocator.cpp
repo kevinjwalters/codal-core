@@ -207,6 +207,9 @@ void *device_malloc_in(size_t size, HeapDefinition &heap)
     // Disable IRQ temporarily to ensure no race conditions!
     target_disable_irq();
 
+    // // Account for the index block;
+    // blocksNeeded++;
+
     // We implement a first fit algorithm with cache to handle rapid churn...
     // We also defragment free blocks as we search, to optimise this and future searches.
     block = heap.heap_start;
