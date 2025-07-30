@@ -40,8 +40,9 @@ ManagedBuffer DataSource::pull()
 	return ManagedBuffer();
 }
 
-void DataSource::pull(ManagedBuffer &bufffer)
+void DataSource::pull(ManagedBuffer &buffer)
 {
+    buffer = pull();
 }
 
 void DataSource::connect(DataSink& )
